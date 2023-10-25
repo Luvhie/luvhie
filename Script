@@ -1,0 +1,32 @@
+#!/bin/bash
+    dir="labs"
+    link = "html"
+    page = "index.html"
+    echo "--------------------------------"
+    echo "NGINX IS ACTIVE"
+    echo "--------------------------------"
+    sleep 1
+    echo "CREATING A DIRECTORY"
+    mkdir /var/www/html$dir
+    sleep 1
+    echo "--------------------------------"
+    echo "DIRECTORY CREATED"
+    sleep 1
+    echo "--------------------------------"
+    echo "CHANGE OWNERSHIP"
+    chown $USER:root /var/www/html/labs
+    echo "--------------------------------"
+    echo "OWNERSHIP CHANGED"
+    echo "--------------------------------"
+    sleep 1
+    echo "CREATING SYMBOLIC LINK"
+    ln -s /var/www/html/$dir $link
+    echo "--------------------------------"
+    echo "SYMBOLIC CREATED"
+    echo "--------------------------------"
+    sleep 1
+  else
+    echo "NGINX NOT ACTIVE"
+  exit 1
+
+  fi
